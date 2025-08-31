@@ -5,14 +5,13 @@ class Solution {
         long val = 0;
         for(int i = 0; i < ch.length; i++){
             int n = ch[i] - 48;
-            val = val * 10 + n;
-            if(val % m == 0){
+            val = (val * 10 + n) % m;
+            if(val == 0){
                 ans[i] = 1;
             }
             else{
                 ans[i] = 0;
             }
-            val = val % m;
         }
         return ans;
     }
